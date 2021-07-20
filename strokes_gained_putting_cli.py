@@ -42,4 +42,4 @@ else:
 
 filename = 'results.json'
 with open(filename, 'w') as f:
-    json.dump(f"\nThe final strokes gained value is: {strokes_gained}!", f)
+    json.dump(strokes_gained, f)
