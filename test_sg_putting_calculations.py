@@ -43,7 +43,8 @@ class StrokesGainedTestCase(unittest.TestCase):
         strokes_gained = sgc.calculate_strokes_gained_putting(
             self.sg_putting_test_ref_data, self.sg_putting_test_input_data[2]
         )
-        self.assertEqual(strokes_gained, 0.95)        
+        #self.assertEqual(strokes_gained, 0.95)
+        self.assertEqual(strokes_gained, 0.90)      
 
 if __name__ == '__main__':
     unittest.main()
