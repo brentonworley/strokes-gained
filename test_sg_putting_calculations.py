@@ -20,7 +20,7 @@ class StrokesGainedTestCase(unittest.TestCase):
         self.sg_putting_test_input_data = [
             {'distance': 1, 'putts': 1},
             {'distance': 5, 'putts': 1},
-            {'distance': 10, 'putts': 1},
+            {'distance': 27, 'putts': 1},
             {'distance': 10, 'putts': 2}
         ]
 
@@ -38,6 +38,12 @@ class StrokesGainedTestCase(unittest.TestCase):
         )
         self.assertEqual(strokes_gained, 0.23)
 
+    def test_distance_in_between(self):
+        """Does the calc work for a distance between reference numbers"""
+        strokes_gained = sgc.calculate_strokes_gained_putting(
+            self.sg_putting_test_ref_data, self.sg_putting_test_input_data[2]
+        )
+        self.assertEqual(strokes_gained, 0.95)        
 
 if __name__ == '__main__':
     unittest.main()
