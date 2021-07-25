@@ -112,3 +112,6 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# file outputs from the app, these will change each time it is run
+outputs/

@@ -6,7 +6,6 @@ def calculate_strokes_gained_putting(reference_data, user_input):
     '''Return the strokes gained value from a dictionary of user input
     {distance, putts} and a list of reference strokes gained data.'''
 
-    strokes_gained = user_input
     # get the reference distance from the first entry in the baseline data
     position = 0
     not_matched = True
@@ -50,7 +49,6 @@ def calculate_strokes_gained_putting(reference_data, user_input):
 
     print(f"Your input of distance of {user_input['distance']} feet equates to a tour averge of {reference_putts} putts")
 
-    gained = calculate_strokes_gained(reference_putts, user_input['putts'])
-    strokes_gained['strokes-gained'] = gained
+    strokes_gained = calculate_strokes_gained(reference_putts, user_input['putts'])
 
     return strokes_gained

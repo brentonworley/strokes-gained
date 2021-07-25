@@ -36,10 +36,14 @@ if tour_pro_sg_putts_baseline:
 
     strokes_gained = sgp(tour_pro_sg_putts_baseline, putts_input)
 
-    print(f"\nThe final strokes gained value is: {strokes_gained}!")
+    user_results = putts_input
+    user_results['strokes-gained'] = strokes_gained
+
+    print(f"\nThe final result is: {user_results}!")
+
+    filename = 'outputs/results.json'
+    with open(filename, 'w') as f:
+        json.dump(user_results, f)
+
 else:
     print(f"The input file {file_name} does not exist")
-
-filename = 'results.json'
-with open(filename, 'w') as f:
-    json.dump(strokes_gained, f)
